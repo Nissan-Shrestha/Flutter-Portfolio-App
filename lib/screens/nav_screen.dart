@@ -12,14 +12,27 @@ class NavScreen extends StatefulWidget {
 }
 
 class _NavScreenState extends State<NavScreen> {
-  List<Widget> screens = [
-    HomeScreen(),
-    AboutScreen(),
-    ProjectsScreen(),
-    ContactScreen(),
-  ];
-
   int _currentIndex = 0;
+
+  late final List<Widget> screens;
+
+  @override
+  void initState() {
+    super.initState();
+
+    screens = [
+      HomeScreen(
+        onTabChange: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
+      const AboutScreen(),
+      const ProjectsScreen(),
+      const ContactScreen(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +41,35 @@ class _NavScreenState extends State<NavScreen> {
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           splashColor: Colors.transparent,
-          hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
         ),
         child: BottomNavigationBar(
-          selectedItemColor: Color(0xff2F80ED),
-
-          type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
-          onTap: (value) {
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: const Color(0xFF2F80ED),
+          unselectedItemColor: Colors.grey,
+          onTap: (index) {
             setState(() {
-              _currentIndex = value;
+              _currentIndex = index;
             });
           },
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.info), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.code), label: ""),
-            BottomNavigationBarItem(icon: Icon(Icons.phone), label: ""),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.code),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.phone),
+              label: "",
+            ),
           ],
         ),
       ),
