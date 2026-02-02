@@ -1,16 +1,30 @@
-# portfolio_app
+# Flutter Portfolio App
 
-A new Flutter project.
+A simple personal portfolio mobile app built with Flutter.
 
-## Getting Started
+## Features
+- Home screen with profile and navigation cards
+- About section with skills and education
+- Projects list with detail view
+- Contact screen with tappable email, phone, GitHub, and LinkedIn
+- Bottom navigation bar
 
-This project is a starting point for a Flutter application.
+## Tech Stack
+- Flutter
+- Dart
+- url_launcher
 
-A few resources to get you started if this is your first Flutter project:
+## How to Run
+1. Clone the repository
+2. Run `flutter pub get`
+3. Run `flutter run`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Challenges Faced
+- Managing navigation between bottom tabs and detail screens
+- Keeping UI responsive across screen sizes
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## What I Learned
+- Flutter navigation patterns
+- Widget composition and layout
+- Passing callbacks between widgets
+- Building clean, reusable UI components
